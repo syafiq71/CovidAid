@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "34937211851",
+    "project_id": "covidaid-660a3",
+    "storage_bucket": "covidaid-660a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34937211851:android:3d6183933dc7c82020844e",
+        "android_client_info": {
+          "package_name": "com.android.covidaid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34937211851-49a4fa0b4bflfd0aqce2236hnq0b57mn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR-vQ6ymaqOxt_Ujb-IDvfivis1VRpz0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34937211851-49a4fa0b4bflfd0aqce2236hnq0b57mn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
