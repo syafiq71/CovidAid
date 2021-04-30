@@ -9,47 +9,91 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="188dp"
         android:padding="15dp">
 
         <TextView
+            android:id="@+id/labelNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="NAMA: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelIC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:text="KAD \nPENGENALAN: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelTel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:text="NO TELEFON: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="10dp"
+            android:text="ALAMAT : "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/labelSumbangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:layout_marginRight="10dp"
+            android:text="ULASAN : "
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/namaPemohon"
-            android:text="Nama pemohon disini"
-            android:layout_marginLeft="10dp" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="132dp"
+            android:text="Nama pemohon disini" />
+
+        <TextView
             android:id="@+id/ICPemohon"
-            android:text="IC pemohon disini"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@id/namaPemohon"/>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="132dp"
+            android:text="IC pemohon disini" />
+
+        <TextView
             android:id="@+id/phonePemohon"
-            android:text="no pemohon disini"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@id/ICPemohon"/>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="132dp"
+            android:text="no pemohon disini" />
+
+        <TextView
             android:id="@+id/alamatPemohon"
-            android:text="alamat pemohon disini"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@id/phonePemohon"/>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+         android:layout_marginTop="80dp"
+            android:layout_marginLeft="132dp"
+            android:text="alamat pemohon disini" />
+
+        <TextView
             android:id="@+id/sebabPemohon"
-            android:text="sebab pemohon disini"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@id/alamatPemohon"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="132dp"
+            android:layout_marginTop="140dp"
+            android:text="sebab pemohon disini" />
     </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
