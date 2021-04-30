@@ -80,6 +80,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        ImageButton btnstatus = (ImageButton) findViewById(R.id.buttonStatus);
+        btnstatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,statusBorang.class));
+            }
+        });
+
     }
 
     @Override

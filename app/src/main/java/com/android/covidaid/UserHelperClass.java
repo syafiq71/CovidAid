@@ -4,6 +4,8 @@ public class UserHelperClass {
 
     String fullName, phoneNo, icNo, userAddress, userAid, uid;
 
+
+
     public UserHelperClass() {
     }
 
