@@ -72,11 +72,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+
+
         ImageButton btnBS = (ImageButton) findViewById(R.id.imgbtnBS);
         btnBS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this,BorangBantuan.class));
+            }
+        });
+
+        ImageButton btnMak = (ImageButton) findViewById(R.id.imgbtnMaklumat);
+        btnMak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,MainStatusActivity.class));
             }
         });
 

@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.covidaid">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidAid">
-        <activity android:name=".statusBorang"></activity>
+        <activity android:name=".MainStatusActivity" />
+        <activity android:name=".statusBorang" />
         <activity android:name=".BorangBantuan" />
         <activity android:name=".MaklumatCovid19" />
         <activity android:name=".BorangKesihatan" />
