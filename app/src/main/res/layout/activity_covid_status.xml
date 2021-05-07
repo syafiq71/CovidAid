@@ -55,13 +55,46 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center">
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/tvStatsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="Malaysia Covid-19 Statistics"/>
+                android:text="Malaysia Covid-19 Statistics"/>-->
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvNewCases"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily Cases:"
+                        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                    <TextView
+                        android:id="@+id/tvNewCases"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:text="newCaseNum" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvTotalCases"
@@ -90,12 +123,12 @@
                         android:textAppearance="?attr/textAppearanceBody1"
                         android:text="CaseNum" />
 
-                    <TextView
+                    <!--<TextView
                         android:id="@+id/tvNewCases"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?attr/textAppearanceBody2"
-                        android:text="NewCaseNum" />
+                        android:text="NewCaseNum" />-->
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>

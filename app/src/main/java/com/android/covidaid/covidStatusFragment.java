@@ -122,12 +122,13 @@ public class covidStatusFragment extends Fragment {
                 tvActiveCases.setText(activeCases);
                 tvTotalRecovered.setText(totalRecovered);
                 tvTotalDeaths.setText(totalDeaths);
+                tvNewCases.setText(newCases);
 
-                if(!newCases.equals("0")){
+               /* if(!newCases.equals("0")){
                     tvNewCases.setText("+"+newCases);
                 }else {
                     tvNewCases.setVisibility(View.GONE);
-                }
+                }*/
                 if(!newRecovered.equals("0")){
                     tvNewRecovered.setText("+"+newRecovered);
                 }else {

@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="188dp"
+        android:layout_height="227dp"
         android:padding="15dp">
 
         <TextView
@@ -57,43 +57,60 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/labelStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginRight="10dp"
+            android:text="STATUS : "
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/namaPemohon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="132dp"
+            android:layout_marginLeft="110dp"
             android:text="Nama pemohon disini" />
 
         <TextView
             android:id="@+id/ICPemohon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="132dp"
             android:text="IC pemohon disini" />
 
         <TextView
             android:id="@+id/phonePemohon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
             android:layout_marginTop="60dp"
-            android:layout_marginLeft="132dp"
             android:text="no pemohon disini" />
 
         <TextView
             android:id="@+id/alamatPemohon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-         android:layout_marginTop="80dp"
-            android:layout_marginLeft="132dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="80dp"
             android:text="alamat pemohon disini" />
 
         <TextView
             android:id="@+id/sebabPemohon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="132dp"
+            android:layout_marginLeft="110dp"
             android:layout_marginTop="140dp"
             android:text="sebab pemohon disini" />
+
+        <TextView
+            android:id="@+id/statusPemohon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="160dp"
+            android:text="status borang disini" />
 
         <!--<Button
             android:id="@+id/button"

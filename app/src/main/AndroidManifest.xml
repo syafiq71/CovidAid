@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidAid">
+        <activity android:name=".statusBorangKendiri"></activity>
         <activity android:name=".MainStatusActivity" />
         <activity android:name=".statusBorang" />
         <activity android:name=".BorangBantuan" />
