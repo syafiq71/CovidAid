@@ -125,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()){
-                                    Toast.makeText(RegisterActivity.this, "User has been registered succesfully!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(RegisterActivity.this, "User has been registered succesfully! Please check your email to verify your account!", Toast.LENGTH_LONG).show();
                                     progressBar.setVisibility(View.GONE);
                                     //redirect login
                                     startActivity(new Intent(RegisterActivity.this, MainActivity.class));

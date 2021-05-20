@@ -41,8 +41,8 @@ public class NewsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_news_fragment, container, false);
-        chipNews = view.findViewById(R.id.chipNews);
-        chipStats = view.findViewById(R.id.chipStats);
+//        chipNews = view.findViewById(R.id.chipNews);
+//        chipStats = view.findViewById(R.id.chipStats);
         recyclerView = view.findViewById(R.id.rvNews);
         return view;
     }
@@ -50,28 +50,28 @@ public class NewsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+//
+//        chipStats.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                chipNews.setChecked(false);
+//                chipStats.setChecked(true);
+//                FragmentManager fragmentManager = getFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .setReorderingAllowed(true)
+//                        .replace(R.id.container, covidstatusFragment, null)
+//                        .addToBackStack(null)
+//                        .commit();
+//            }
+//        });
 
-        chipStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chipNews.setChecked(false);
-                chipStats.setChecked(true);
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.container, covidstatusFragment, null)
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
-
-        chipNews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chipNews.setChecked(true);
-                chipStats.setChecked(false);
-            }
-        });
+//        chipNews.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                chipNews.setChecked(true);
+//                chipStats.setChecked(false);
+//            }
+//        });
 
         //retrofit builder
         Retrofit retrofit = new Retrofit.Builder()

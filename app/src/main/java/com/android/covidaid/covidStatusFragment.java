@@ -73,10 +73,10 @@ public class covidStatusFragment extends Fragment {
         tvGlobalRecovered = view.findViewById(R.id.tvGlobalReovered);
         tvGlobalDeaths = view.findViewById(R.id.tvGlobalDeaths);
         chart = view.findViewById(R.id.chart);
-        chipStats = view.findViewById(R.id.chipStats);
-        chipNews = view.findViewById(R.id.chipNews);
-        chipStats.setChecked(true);
-        chipNews.setChecked(false);
+//        chipStats = view.findViewById(R.id.chipStats);
+//        chipNews = view.findViewById(R.id.chipNews);
+//        chipStats.setChecked(true);
+//        chipNews.setChecked(false);
         return view;
     }
 
@@ -89,20 +89,20 @@ public class covidStatusFragment extends Fragment {
         mainViewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(MainViewModel.class);
 
-        chipNews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chipStats.setChecked(false);
-                chipNews.setChecked(true);
-                Fragment newsFragment = new NewsFragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.container, newsFragment,null )
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
+//        chipNews.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                chipStats.setChecked(false);
+//                chipNews.setChecked(true);
+//                Fragment newsFragment = new NewsFragment();
+//                FragmentManager fragmentManager = getFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .setReorderingAllowed(true)
+//                        .replace(R.id.container, newsFragment,null )
+//                        .addToBackStack(null)
+//                        .commit();
+//            }
+//        });
 
         //Observer to observe changes in ViewModel
         mainViewModel.getCovidData().observe(this, new Observer<CovidData>() {

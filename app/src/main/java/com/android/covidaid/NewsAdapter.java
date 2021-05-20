@@ -40,23 +40,28 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull NewsAdapter.MyViewHolder holder, int position) {
         Source source = articlesList.get(position).getSource();
         holder.newsTitle.setText(articlesList.get(position).getTitle());
-        holder.newsDescription.setText(articlesList.get(position).getDescription());
-        holder.newsPublishedAt.setText(articlesList.get(position).getPublishedAt());
-        holder.newsSource.setText("Source: "+source.getName());
+//        holder.newsDescription.setText(articlesList.get(position).getDescription());
+        String date = articlesList.get(position).getPublishedAt();
+        String YY = date.substring(0,4);
+        String DD = date.substring(8,10);
+        String MM= date.substring(5,7);
+
+        holder.newsPublishedAt.setText(DD + "-"+ MM + "-"+YY);
+        holder.newsSource.setText(source.getName());
         //holder.newsUrl.setText(articlesList.get(position).getUrl());
 
         Glide.with(context)
                 .load(articlesList.get(position).getUrlToImage())
                 .into(holder.newsImage);
 
-        holder.newsUrl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri url = Uri.parse(articlesList.get(position).getUrl());
-                Intent intent = new Intent(Intent.ACTION_VIEW, url);
-                context.startActivity(intent);
-            }
-        });
+//        holder.newsUrl.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Uri url = Uri.parse(articlesList.get(position).getUrl());
+//                Intent intent = new Intent(Intent.ACTION_VIEW, url);
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
     @Override
@@ -72,10 +77,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             super(itemView);
             newsTitle = itemView.findViewById(R.id.newTitle);
             newsPublishedAt = itemView.findViewById(R.id.newsPublishedAt);
-            newsDescription = itemView.findViewById(R.id.newsDescription);
+//            newsDescription = itemView.findViewById(R.id.newsDescription);
             newsSource = itemView.findViewById(R.id.sourceName);
             newsImage = itemView.findViewById(R.id.newsImage);
-            newsUrl = itemView.findViewById(R.id.urlToNews);
+//            newsUrl = itemView.findViewById(R.id.urlToNews);
         }
     }
 }

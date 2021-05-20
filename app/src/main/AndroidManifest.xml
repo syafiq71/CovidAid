@@ -11,8 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CovidAid">
-        <activity android:name=".statusBorangKendiri"></activity>
+        android:theme="@style/Theme.CovidAid"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".AdminPage"></activity>
+        <activity android:name=".statusBorangKendiri" />
         <activity android:name=".MainStatusActivity" />
         <activity android:name=".statusBorang" />
         <activity android:name=".BorangBantuan" />
@@ -20,7 +22,8 @@
         <activity android:name=".BorangKesihatan" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

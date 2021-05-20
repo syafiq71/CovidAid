@@ -3,10 +3,12 @@ package com.android.covidaid;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -30,6 +32,7 @@ public class BorangBantuan extends AppCompatActivity {
     private Button textButtonSubmitS;
     private ProgressBar progressBarSumbangan;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,7 @@ public class BorangBantuan extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextInputEditText fullnameTVBK = (TextInputEditText) findViewById(R.id.editFullname);
+//        final EditText fullnameTVBK = (TextInputEditText) findViewById(R.id.editFullname);
 
         textFieldFullSumb = findViewById(R.id.textFieldFullSumb);
         textFieldPhoneSumb = findViewById(R.id.textFieldPhoneSumb);
@@ -64,7 +67,7 @@ public class BorangBantuan extends AppCompatActivity {
                 if (userProfile != null){
                     String fullname = userProfile.fullName;
 
-                    fullnameTVBK.setText(fullname);
+//                    fullnameTVBK.setText(fullname);
                     progressBarSumbangan.setVisibility(View.GONE);
                     Toast.makeText(BorangBantuan.this, "Loaded from profile", Toast.LENGTH_SHORT).show();
 

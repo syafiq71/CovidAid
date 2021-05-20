@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_menu_covid"
+        android:title="Covid Cases"
+        android:icon="@drawable/ic_baseline_analytics_24"/>
 
     <item
-        android:id="@+id/logkeluar"
-        android:title="Logout"
+        android:id="@+id/nav_menu_covidNews"
+        android:title="Covid News"
+        android:icon="@drawable/ic_baseline_aod_24"/>
 
-        >
+    <item
+        android:id="@+id/nav_menu_borangBantuan"
+        android:title="NGO"
+        android:icon="@drawable/ic_baseline_shopping_bag_24"/>
 
+    <item
+        android:id="@+id/nav_menu_appointment"
+        android:title="Medical Appointment"
+        android:icon="@drawable/ic_baseline_local_hospital_24"/>
+        </group>
 
+    <item
+        android:title="Account" >
+        <menu>
+            <item
+                android:id="@+id/nav_menu_application"
+                android:title="Application Status"
+                android:icon="@drawable/ic_baseline_assignment_turned_in_24"/>
+            <item
+                android:id="@+id/logkeluar"
+                android:title="Logout"
+                android:icon="@drawable/logout"/>
+
+        </menu>
     </item>
 
 </menu>
