@@ -42,22 +42,9 @@
 
 
         <ImageView
-            android:layout_width="381dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient" />
-
-
-        <TextView
-            android:id="@+id/newTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:padding="10dp"
-            android:text="News Title"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
 
 
         <LinearLayout
@@ -94,6 +81,17 @@
     </FrameLayout>
 
             <TextView
+                android:id="@+id/newTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:padding="10dp"
+                android:text="News Title"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/newsPublishedAtDesc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -114,6 +112,12 @@
         app:cardElevation="4dp"
         android:layout_marginTop="10dp"
         app:cardCornerRadius="6dp">
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:id="@+id/loaderBrowser"/>
 
         <WebView
             android:layout_width="match_parent"

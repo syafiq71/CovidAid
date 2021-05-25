@@ -8,6 +8,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -17,6 +18,7 @@ public class NewsDetail extends AppCompatActivity {
     TextView newTitle,sourceName,newsPublishedAt,newsPublishedAtDesc;
     ImageView imageView;
     WebView webView;
+    ProgressBar loader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class NewsDetail extends AppCompatActivity {
         imageView = findViewById(R.id.newsImage);
 
         webView= findViewById(R.id.webView);
+        loader= findViewById(R.id.loaderBrowser);
+        loader.setVisibility(View.VISIBLE);
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
@@ -54,5 +58,9 @@ public class NewsDetail extends AppCompatActivity {
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(url);
+        if (webView.isShown()){
+            loader.setVisibility(View.INVISIBLE);
+        }
+        loader.setVisibility(View.VISIBLE);
     }
 }
