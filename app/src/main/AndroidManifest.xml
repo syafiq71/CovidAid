@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidAid"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AdminPage"></activity>
+        <activity android:name=".NewsDetail"></activity>
+        <activity android:name=".AdminPage" />
         <activity android:name=".statusBorangKendiri" />
         <activity android:name=".MainStatusActivity" />
         <activity android:name=".statusBorang" />

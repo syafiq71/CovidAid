@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.google.android.material.chip.Chip;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,7 +32,7 @@ public class NewsFragment extends Fragment {
     private Chip chipStats, chipNews;
     private List<Articles> articlesList;
     private RecyclerView recyclerView;
-
+    SwipeRefreshLayout swipeRefreshLayout;
     public NewsFragment() {
         // Required empty public constructor
     }
@@ -44,6 +46,7 @@ public class NewsFragment extends Fragment {
 //        chipNews = view.findViewById(R.id.chipNews);
 //        chipStats = view.findViewById(R.id.chipStats);
         recyclerView = view.findViewById(R.id.rvNews);
+//        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
         return view;
     }
 
@@ -113,5 +116,10 @@ public class NewsFragment extends Fragment {
         ItemDecorator decorator = new ItemDecorator(30);
         recyclerView.addItemDecoration(decorator);
         recyclerView.setAdapter(adapter);
+    }
+    public String getCountry(){
+        Locale locale = Locale.getDefault();
+        String country = locale.getCountry();
+        return country.toLowerCase();
     }
 }
