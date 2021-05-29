@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -26,11 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class statusBorangKendiri extends AppCompatActivity {
 
-    TextView username,date;
+    TextView username,date,ditolak;
     ProgressBar progressBar;
     DatabaseReference databaseReference;
     CardView progressCountParent, progressCountParent2,progressCountParent3;
     Toolbar toolbar1;
+    ImageView imgwrong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class statusBorangKendiri extends AppCompatActivity {
         progressCountParent = findViewById(R.id.progressCountParent);
         progressCountParent2 = findViewById(R.id.progressCountParent2);
         progressCountParent3 = findViewById(R.id.progressCountParent3);
+        ditolak = findViewById(R.id.textView7);
+        imgwrong = findViewById(R.id.truetick);
         date = findViewById(R.id.dateTv);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Sumbangan");
@@ -55,6 +59,12 @@ public class statusBorangKendiri extends AppCompatActivity {
                             progressCountParent.setCardBackgroundColor(Color.parseColor("#32CD32"));
                             progressCountParent2.setCardBackgroundColor(Color.parseColor("#32CD32"));
                             progressCountParent3.setCardBackgroundColor(Color.parseColor("#32CD32"));
+                            date.setText(dataSnapshot.child("date").getValue(String.class));
+                        }
+                        else if (dataSnapshot.child("status").getValue().equals("ditolak")){
+                            progressCountParent.setCardBackgroundColor(Color.parseColor("#e50000"));
+                            imgwrong.setImageResource(R.drawable.ic_baseline_remove_24);
+                            ditolak.setText("Borang ditolak");
                             date.setText(dataSnapshot.child("date").getValue(String.class));
                         }
                     }

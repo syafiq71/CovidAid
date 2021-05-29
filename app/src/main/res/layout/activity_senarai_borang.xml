@@ -27,8 +27,8 @@
 
             <TextView
                 android:id="@+id/aidTV"
-                android:layout_width="158dp"
-                android:layout_height="27dp"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
@@ -44,11 +44,11 @@
                 android:id="@+id/imageLoad"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginLeft="140dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/sand_clock"
                 app:layout_constraintBottom_toBottomOf="@+id/aidTV"
-                app:layout_constraintStart_toEndOf="@+id/aidTV"
+                app:layout_constraintEnd_toStartOf="@+id/arrowBtn"
                 app:layout_constraintTop_toTopOf="@+id/aidTV"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -102,7 +102,7 @@
                 <TextView
                     android:id="@+id/labelNama"
                     android:layout_width="200dp"
-                    android:layout_height="20dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginLeft="25dp"
                     android:text="full name"
@@ -141,7 +141,7 @@
                 <TextView
                     android:id="@+id/labelAlamat"
                     android:layout_width="200dp"
-                    android:layout_height="20dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginLeft="25dp"
                     android:text="Address"

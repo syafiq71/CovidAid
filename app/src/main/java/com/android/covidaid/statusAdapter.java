@@ -24,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class statusAdapter extends FirebaseRecyclerAdapter<UserHelperClass,statusAdapter.statusViewHolder> {
@@ -41,6 +42,31 @@ public class statusAdapter extends FirebaseRecyclerAdapter<UserHelperClass,statu
        holder.phone.setText(model.getPhoneNo());
        holder.address.setText(model.getUserAddress());
        holder.aid.setText(model.getUserAid());
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Sumbangan");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    if (dataSnapshot.child("uid").getValue().equals(model.getUid())) {
+                        if (dataSnapshot.child("status").getValue().equals("diterima")) {
+                            holder.imgload.setImageResource(R.drawable.lulus);
+                            holder.acceptButton.setVisibility(View.GONE);
+                            holder.declinedButton.setVisibility(View.GONE);
+                        } else if (dataSnapshot.child("status").getValue().equals("ditolak")) {
+                            holder.imgload.setImageResource(R.drawable.rejected);
+                            holder.acceptButton.setVisibility(View.GONE);
+                            holder.declinedButton.setVisibility(View.GONE);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @NonNull
@@ -54,9 +80,9 @@ public class statusAdapter extends FirebaseRecyclerAdapter<UserHelperClass,statu
 
     class statusViewHolder extends RecyclerView.ViewHolder{
         TextView  user, ic, address, aid, phone, uid;
-        ImageView imgload;
+        public ImageView imgload;
         ConstraintLayout expandablView;
-        Button arrowBtn, acceptButton, declinedButton;
+        public Button arrowBtn, acceptButton, declinedButton;
         CardView cardView;
         FirebaseDatabase rootNode;
 
@@ -79,32 +105,15 @@ public class statusAdapter extends FirebaseRecyclerAdapter<UserHelperClass,statu
            imgload = (ImageView) itemView.findViewById(R.id.imageLoad);
 
 
-//            rootNode = FirebaseDatabase.getInstance();
+            rootNode = FirebaseDatabase.getInstance();
 //            reference = rootNode.getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Sumbangan");
 //            refSumbangan = rootNode.getReference().child("Sumbangan");
 
 
 
-//            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Sumbangan");
-//            reference.addListenerForSingleValueEvent(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                    for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-//                        if (dataSnapshot.child("uid").getValue().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
-//                            if (dataSnapshot.child("status").getValue().equals("diterima")) {
-//                                imgload.setImageResource(R.drawable.rejected);
-//                            } else if (dataSnapshot.child("status").getValue().equals("ditolak")) {
-//                                imgload.setImageResource(R.drawable.rejected);
-//                            }
-//                        }
-//                    }
-//                }
-//
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                }
-//            });
+
+
+
 
            arrowBtn.setOnClickListener(new View.OnClickListener() {
                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
