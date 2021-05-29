@@ -22,6 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class BorangBantuan extends AppCompatActivity {
 
     private FirebaseUser user;
@@ -90,6 +93,11 @@ public class BorangBantuan extends AppCompatActivity {
                 reference = rootNode.getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Sumbangan");
                 refSumbangan = rootNode.getReference().child("Sumbangan");
 
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("hh-mm-ss");
+                String format = simpleDateFormat.format(new Date());
+                String format2 = simpleTimeFormat.format(new Date());
+
 
                 //Get all values
                 String fullName = textFieldFullSumb.getEditText().getText().toString();
@@ -102,7 +110,12 @@ public class BorangBantuan extends AppCompatActivity {
 
              UserHelperClass helperClass = new UserHelperClass(fullName, phoneNo, icNo, userAddress,userAid,uid);
                 reference.setValue(helperClass);
+                reference.child("date").setValue(format);
+
+
                 FirebaseDatabase.getInstance().getReference("Sumbangan").child(uid).setValue(helperClass);
+                FirebaseDatabase.getInstance().getReference("Sumbangan").child(uid).child("date").setValue(format);
+                FirebaseDatabase.getInstance().getReference("Sumbangan").child(uid).child("status").setValue("dihantar");
                 //refSumbangan.child(idSumbangan).setValue(helperClass);
 
                 Toast.makeText(BorangBantuan.this, "Your form has been sent!", Toast.LENGTH_LONG).show();

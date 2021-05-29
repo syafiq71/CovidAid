@@ -4,30 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".statusBorangKendiri">
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-    </androidx.appcompat.widget.Toolbar>
-
+    tools:context=".statusBorangUpdate">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="256dp"
         android:layout_margin="10dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -71,8 +55,8 @@
                 android:id="@+id/progressCountParent"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
                 app:cardBackgroundColor="#707070"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="3dp"

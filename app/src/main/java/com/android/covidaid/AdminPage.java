@@ -2,6 +2,7 @@ package com.android.covidaid;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,25 +20,25 @@ public class AdminPage extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference;
-    TextView progressCount;
+    CardView cardView;
+    TextView counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_page);
 
-        progressCount = findViewById(R.id.progressCount);
+        counter = findViewById(R.id.counter);
         reference = database.getReference().child("Sumbangan");
+        cardView = findViewById(R.id.userCV);
 
-
-
-        ImageButton btnstatus = (ImageButton) findViewById(R.id.buttonStatus);
-        btnstatus.setOnClickListener(new View.OnClickListener() {
+        cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminPage.this,statusBorang.class));
             }
         });
+
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -46,7 +47,7 @@ public class AdminPage extends AppCompatActivity {
                 int sum = 0;
                 if (snapshot.exists()){
                     sum = (int) snapshot.getChildrenCount();
-                    progressCount.setText(Integer.toString(sum)+ "");
+                    counter.setText(Integer.toString(sum)+ "");
                 }
 
             }

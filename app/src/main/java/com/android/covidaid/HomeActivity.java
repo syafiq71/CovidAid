@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
-       getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -62,6 +62,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
 
+                    case R.id.nav_menu_admin:
+                        startActivity(new Intent(HomeActivity.this, AdminPage.class));
+
                     case R.id.nav_menu_borangBantuan:
                         startActivity(new Intent(HomeActivity.this, BorangBantuan.class));
 
@@ -75,7 +78,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
                     case R.id.nav_menu_application:
-                        Toast.makeText(HomeActivity.this, "You are now access as admin!", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(HomeActivity.this, statusBorangKendiri.class));
                         break;
                     case R.id.logkeluar:

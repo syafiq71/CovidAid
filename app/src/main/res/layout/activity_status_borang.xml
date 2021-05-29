@@ -6,33 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".statusBorang">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarSenaraiBorang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00CC6A"
-        android:fadeScrollbars="true"
-        android:fontFamily="@font/inconsolata"
-        android:minHeight="?attr/actionBarSize"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:theme="?attr/actionBarTheme"
-        app:title="Senarai Pemohon Bantuan"
-        app:titleMarginStart="120dp"
-        app:titleTextAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:titleTextColor="#000000"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewStatus"
-        android:layout_width="398dp"
-        android:layout_height="666dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/toolbarSenaraiBorang"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarSenaraiBorang" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBarStatusBorang"
@@ -42,6 +22,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/recViewStatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbarSenaraiBorang" />
+        app:layout_constraintTop_toTopOf="@+id/recViewStatus"
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

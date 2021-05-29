@@ -1,15 +1,30 @@
 package com.android.covidaid;
 
+import android.graphics.Color;
+import android.os.Build;
+import android.transition.AutoTransition;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class statusAdapter extends FirebaseRecyclerAdapter<UserHelperClass,statusAdapter.statusViewHolder> {
 
@@ -19,32 +34,117 @@ public class statusAdapter extends FirebaseRecyclerAdapter<UserHelperClass,statu
 
     @Override
     protected void onBindViewHolder(@NonNull statusViewHolder holder, int position, @NonNull UserHelperClass model) {
-        holder.name.setText(model.getFullName());
-        holder.ic.setText(model.getIcNo());
-        holder.phone.setText(model.getPhoneNo());
-        holder.address.setText(model.getUserAddress());
-        holder.aid.setText(model.getUserAid());
+
+       holder.uid.setText(model.getUid());
+       holder.user.setText(model.getFullName());
+       holder.ic.setText(model.getIcNo());
+       holder.phone.setText(model.getPhoneNo());
+       holder.address.setText(model.getUserAddress());
+       holder.aid.setText(model.getUserAid());
     }
 
     @NonNull
     @Override
     public statusViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.singlestatus,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_senarai_borang,parent,false);
 
         return new statusViewHolder(view);
 
     }
 
     class statusViewHolder extends RecyclerView.ViewHolder{
-        TextView name, ic, address, aid, phone;
+        TextView  user, ic, address, aid, phone, uid;
+        ImageView imgload;
+        ConstraintLayout expandablView;
+        Button arrowBtn, acceptButton, declinedButton;
+        CardView cardView;
+        FirebaseDatabase rootNode;
 
         public statusViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = (TextView)itemView.findViewById(R.id.namaPemohon);
-            ic = (TextView)itemView.findViewById(R.id.ICPemohon);
-            address = (TextView)itemView.findViewById(R.id.alamatPemohon);
-            aid = (TextView)itemView.findViewById(R.id.sebabPemohon);
-            phone = (TextView)itemView.findViewById(R.id.phonePemohon);
+
+            uid = (TextView)itemView.findViewById(R.id.uid);
+            user = (TextView)itemView.findViewById(R.id.labelNama);
+            ic = (TextView)itemView.findViewById(R.id.labelIC);
+            address = (TextView)itemView.findViewById(R.id.labelAlamat);
+            aid = (TextView)itemView.findViewById(R.id.aidTV);
+            phone = (TextView)itemView.findViewById(R.id.labelTel);
+
+           expandablView = (ConstraintLayout)itemView.findViewById(R.id.expandableview);
+           arrowBtn = (Button)itemView.findViewById(R.id.arrowBtn);
+           cardView = (CardView)itemView.findViewById(R.id.cardViewStart);
+
+           acceptButton = (Button)itemView.findViewById(R.id.btnAccept);
+           declinedButton = (Button)itemView.findViewById(R.id.declinebtn);
+           imgload = (ImageView) itemView.findViewById(R.id.imageLoad);
+
+
+//            rootNode = FirebaseDatabase.getInstance();
+//            reference = rootNode.getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Sumbangan");
+//            refSumbangan = rootNode.getReference().child("Sumbangan");
+
+
+
+//            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Sumbangan");
+//            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+//                        if (dataSnapshot.child("uid").getValue().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+//                            if (dataSnapshot.child("status").getValue().equals("diterima")) {
+//                                imgload.setImageResource(R.drawable.rejected);
+//                            } else if (dataSnapshot.child("status").getValue().equals("ditolak")) {
+//                                imgload.setImageResource(R.drawable.rejected);
+//                            }
+//                        }
+//                    }
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
+
+           arrowBtn.setOnClickListener(new View.OnClickListener() {
+               @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+               @Override
+               public void onClick(View v) {
+                   if (expandablView.getVisibility()==View.GONE){
+                       TransitionManager.beginDelayedTransition(cardView, new AutoTransition());
+                       expandablView.setVisibility(View.VISIBLE);
+                       arrowBtn.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
+                   } else {
+                       TransitionManager.beginDelayedTransition(cardView, new AutoTransition());
+                       expandablView.setVisibility(View.GONE);
+                       arrowBtn.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+                   }
+               }
+           });
+
+           acceptButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+//                   openDialog();
+                   FirebaseDatabase.getInstance().getReference("Sumbangan").child( uid.getText().toString()).child("status").setValue("diterima");
+                   imgload.setImageResource(R.drawable.lulus);
+               }
+           });
+
+           declinedButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   imgload.setImageResource(R.drawable.rejected);
+                   FirebaseDatabase.getInstance().getReference("Sumbangan").child( uid.getText().toString()).child("status").setValue("ditolak");
+               }
+           });
+
+
+        }
+
+        public void openDialog() {
+//            ConfirmDialog confirmDialog = new ConfirmDialog();
+//            confirmDialog.show(getSupportFragmentManager(),"testing");
         }
     }
 }
