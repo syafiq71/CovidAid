@@ -7,16 +7,16 @@
     android:orientation="vertical">
 
 
-
-
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cvNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
-        app:cardCornerRadius="10dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -48,7 +48,6 @@
                 android:textStyle="bold" />
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,9 +60,9 @@
                     android:id="@+id/sourceName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Source"
                     android:ems="13"
                     android:padding="10dp"
+                    android:text="Source"
                     android:textColor="#FBFBFB"
                     android:textSize="15dp" />
 
@@ -82,74 +81,70 @@
 
         </FrameLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:orientation="vertical">-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:orientation="vertical">-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/newsDescription"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="20dp"-->
-<!--                    android:layout_marginLeft="20dp"-->
-<!--                    android:padding="2dp"-->
-<!--                    android:text="News Description"-->
-<!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"-->
-<!--                    android:textColor="#FFFFFF"-->
-<!--                    android:textSize="10dp" />-->
+        <!--                <TextView-->
+        <!--                    android:id="@+id/newsDescription"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="20dp"-->
+        <!--                    android:layout_marginLeft="20dp"-->
+        <!--                    android:padding="2dp"-->
+        <!--                    android:text="News Description"-->
+        <!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"-->
+        <!--                    android:textColor="#FFFFFF"-->
+        <!--                    android:textSize="10dp" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/newTitle"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="20dp"-->
-<!--                    android:layout_marginLeft="20dp"-->
-<!--                    android:text="News Title"-->
-<!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"-->
-<!--                    android:textColor="#FBFBFB"-->
-<!--                    android:textSize="18dp" />-->
+        <!--                <TextView-->
+        <!--                    android:id="@+id/newTitle"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="20dp"-->
+        <!--                    android:layout_marginLeft="20dp"-->
+        <!--                    android:text="News Title"-->
+        <!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"-->
+        <!--                    android:textColor="#FBFBFB"-->
+        <!--                    android:textSize="18dp" />-->
 
-<!--            </LinearLayout>-->
-
-
+        <!--            </LinearLayout>-->
 
 
+        <!--        <ImageView-->
+        <!--            android:id="@+id/newsImage"-->
+        <!--            android:layout_width="390dp"-->
+        <!--            android:layout_height="235dp" />-->
 
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="408dp"-->
+        <!--            android:layout_height="251dp"-->
+        <!--            android:gravity="center"-->
+        <!--            android:orientation="vertical">-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/newsImage"-->
-<!--            android:layout_width="390dp"-->
-<!--            android:layout_height="235dp" />-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/newsPublishedAt"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="published at"-->
+        <!--                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />-->
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="408dp"-->
-<!--            android:layout_height="251dp"-->
-<!--            android:gravity="center"-->
-<!--            android:orientation="vertical">-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/urlToNews"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:clickable="true"-->
+        <!--                android:text="Read Here" />-->
 
-<!--            <TextView-->
-<!--                android:id="@+id/newsPublishedAt"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="published at"-->
-<!--                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/sourceName"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="left"-->
+        <!--                android:text="Source:" />-->
 
-<!--            <TextView-->
-<!--                android:id="@+id/urlToNews"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:clickable="true"-->
-<!--                android:text="Read Here" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/sourceName"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="left"-->
-<!--                android:text="Source:" />-->
-
-<!--        </LinearLayout>-->
+        <!--        </LinearLayout>-->
 
     </androidx.cardview.widget.CardView>
 

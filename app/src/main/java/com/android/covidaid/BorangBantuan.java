@@ -1,12 +1,16 @@
 package com.android.covidaid;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -34,7 +38,10 @@ public class BorangBantuan extends AppCompatActivity {
     private TextInputLayout textFieldFullSumb, textFieldPhoneSumb, textFieldICsumb, textFieldAdrressSumb, textFieldJenisSumb;
     private Button textButtonSubmitS;
     private ProgressBar progressBarSumbangan;
+    private AutoCompleteTextView autoCompleteTextView;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,13 @@ public class BorangBantuan extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
+
+        autoCompleteTextView = findViewById(R.id.autoComplete);
+
+        String []option = {"Bantuan Harian","Bantuan Makanan","Bantuan Pakaian","Bantuan Ubat-ubatan","Bantuan Kewangan"};
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.dropdown,option);
+        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString(),false);
+        autoCompleteTextView.setAdapter(arrayAdapter);
 
 //        final EditText fullnameTVBK = (TextInputEditText) findViewById(R.id.editFullname);
 

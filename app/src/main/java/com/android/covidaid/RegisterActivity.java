@@ -65,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String fullname = textFieldName.getEditText().getText().toString().trim();
         String password = textFieldPasswordR.getEditText().getText().toString().trim();
         String confirmpassword = textFieldConfirmPasswordR.getEditText().getText().toString().trim();
+        String type = "normal";
 
         if (email.isEmpty()) {
             textFieldEmail.setError("Email is required!");
@@ -118,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if (task.isSuccessful()){
-                        User user = new User(fullname, email);
+                        User user = new User(fullname, email, type);
                         FirebaseDatabase.getInstance().getReference("Users")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                 .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

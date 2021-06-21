@@ -3,6 +3,16 @@
     <string name="app_menu">Menu</string>
     <string name="openNavDrawer">Navigation Drawer Open</string>
     <string name="closeNavDrawer">Navigation Drawer Close</string>
+
+    <string-array name="aid">
+        <item>Keperluan Harian</item>
+        <item>Keperluan Pakaian</item>
+        <item>Keperluan Makanan</item>
+        <item>Keperluan Ubat-ubatan</item>
+        <item>Sumbangan Wang</item>
+
+
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -162,6 +162,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:id="@+id/textFieldJenisSumb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -169,14 +170,15 @@
                 android:layout_marginBottom="8dp"
                 android:textColorHint="#FF8A99AF">
 
-                <EditText
-
+                <AutoCompleteTextView
+                    android:id="@+id/autoComplete"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:drawablePadding="16dp"
+
                     android:hint="Type of Aid"
-                    android:inputType="text"
+                    android:inputType="none"
                     android:drawableRight="@drawable/ic_baseline_emoji_people_24"
                     android:maxLines="4"
                     android:textColor="@android:color/black"

@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         if (savedInstanceState==null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_menu_covid);
+            navigationView.setCheckedItem(R.id.nav_menu_home);
         }
 
         //click on navigation item
@@ -61,12 +61,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
+                    case R.id.nav_menu_home:
+                        startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+                        break;
 
                     case R.id.nav_menu_admin:
                         startActivity(new Intent(HomeActivity.this, AdminPage.class));
+                        break;
 
                     case R.id.nav_menu_borangBantuan:
                         startActivity(new Intent(HomeActivity.this, BorangBantuan.class));
+                        break;
 
                     case R.id.nav_menu_covidNews:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
@@ -76,6 +81,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new covidStatusFragment()).commit();
                         break;
 
+                    case R.id.nav_menu_appointment:
+                        startActivity(new Intent(HomeActivity.this, AAppointmentMainActivity.class));
+                        break;
+
+                    case R.id.nav_menu_appointmentStatus:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new sAppointment()).commit();
+                        break;
 
                     case R.id.nav_menu_application:
                         startActivity(new Intent(HomeActivity.this, statusBorangKendiri.class));

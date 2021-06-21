@@ -5,7 +5,13 @@
 
 
     <group android:checkableBehavior="single">
+
     <item
+        android:id="@+id/nav_menu_home"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_house_24"/>
+
+        <item
         android:id="@+id/nav_menu_covid"
         android:title="Covid Cases"
         android:icon="@drawable/ic_baseline_analytics_24"/>
@@ -34,9 +40,14 @@
                 android:title="Application Status"
                 android:icon="@drawable/ic_baseline_assignment_turned_in_24"/>
             <item
+                android:id="@+id/nav_menu_appointmentStatus"
+                android:title="Appointment Status"
+                android:icon="@drawable/ic_baseline_map_24"/>
+            <item
                 android:id="@+id/nav_menu_admin"
                 android:title="Admin"
-                android:icon="@drawable/ic_baseline_circle_notifications_24"/>
+                android:icon="@drawable/ic_baseline_circle_notifications_24"
+                />
             <item
                 android:id="@+id/logkeluar"
                 android:title="Logout"

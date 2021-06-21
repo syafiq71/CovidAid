@@ -12,7 +12,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -25,7 +27,7 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
+                        android:layout_height="170dp"
                         android:background="#94E2DA"
                         android:scaleType="centerCrop"
                         android:src="@drawable/covidaid" />
@@ -48,7 +50,7 @@
                         android:id="@+id/subtitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="120dp"
                         android:fontFamily="sans-serif"
                         android:gravity="center_horizontal"
                         android:text="Let's book an appointment."
@@ -96,10 +98,10 @@
                                     android:src="@drawable/ic_patient" />
 
                                 <TextView
-                                    android:text="Cases"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"
+                                    android:text="Cases"
                                     android:textSize="18sp" />
 
 
@@ -130,17 +132,17 @@
                                     android:src="@drawable/ic_virus" />
 
                                 <TextView
-                                    android:text="News"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"
+                                    android:text="News"
                                     android:textSize="18sp" />
-
 
 
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:id="@+id/ngoCv"
                             android:layout_width="wrap_content"
@@ -164,17 +166,17 @@
                                     android:src="@drawable/ic_ngo" />
 
                                 <TextView
-                                    android:text="Charity"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"
+                                    android:text="Charity"
                                     android:textSize="18sp" />
-
 
 
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cvAppointment"
                             android:layout_width="wrap_content"
@@ -198,12 +200,11 @@
                                     android:src="@drawable/ic_hospital" />
 
                                 <TextView
-                                    android:text="Appointment"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="12dp"
+                                    android:text="Appointment"
                                     android:textSize="18sp" />
-
 
 
                             </LinearLayout>
@@ -215,14 +216,14 @@
 
 
                 <!--                <androidx.cardview.widget.CardView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginLeft="8dp"-->
-<!--                    android:layout_marginTop="-44dp"-->
-<!--                    android:layout_marginRight="8dp"-->
-<!--                    app:cardCornerRadius="8dp"-->
-<!--                    app:cardUseCompatPadding="true"-->
-<!--                    app:contentPadding="16dp">-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginLeft="8dp"-->
+                <!--                    android:layout_marginTop="-44dp"-->
+                <!--                    android:layout_marginRight="8dp"-->
+                <!--                    app:cardCornerRadius="8dp"-->
+                <!--                    app:cardUseCompatPadding="true"-->
+                <!--                    app:contentPadding="16dp">-->
 
 
                 <!--                </androidx.cardview.widget.CardView>-->
